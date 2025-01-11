@@ -1,10 +1,9 @@
-// LoginComponent.tsx
-
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { UserCircle2,  ArrowRight, Shield, Lock } from "lucide-react";
+import { Shield} from "lucide-react";
 import ForgotPassword from '@/app/component/ForgotPassword'
+import LoginForm from './LoginForm';
 
 const LoginComponent: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,16 +20,10 @@ const LoginComponent: React.FC = () => {
 
   return (
     <div
-      className={`flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-indigo-950 to-blue-900 text-white font-sans p-4 md:p-8 transition-opacity duration-1000 ${
-        isPageLoaded ? "opacity-100" : "opacity-0"
-      }`}
+      className={`flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-indigo-950 to-blue-900 text-white font-sans p-4 md:p-8 transition-opacity duration-1000 ${isPageLoaded ? "opacity-100" : "opacity-0"}`}
     >
       <div
-        className={`flex flex-col md:flex-row w-full max-w-6xl h-full md:h-[80vh] rounded-2xl overflow-hidden shadow-2xl transition-all duration-1000 transform ${
-          showLoginForm
-            ? "translate-y-0 opacity-100"
-            : "translate-y-10 opacity-0"
-        }`}
+        className={`flex flex-col md:flex-row w-full max-w-6xl h-full md:h-[80vh] rounded-2xl overflow-hidden shadow-2xl transition-all duration-1000 transform ${showLoginForm ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
       >
         <div className="flex flex-col items-center justify-center flex-1 bg-black/30 backdrop-blur-lg p-6 md:p-8 space-y-6 md:space-y-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 animate-gradient-xy"></div>
@@ -67,26 +60,7 @@ const LoginComponent: React.FC = () => {
             </div>
 
             <div className="space-y-6 mt-8">
-              <div className="relative group transform transition-all duration-300 hover:-translate-y-1">
-                <UserCircle2 className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" />
-                <input
-                  type="text"
-                  placeholder="Usuario"
-                  className="w-full p-4 pl-12 bg-black/30 backdrop-blur-xl border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-transparent transition-all duration-300 hover:border-yellow-400/30"
-                />
-              </div>
-              <div className="relative group transform transition-all duration-300 hover:-translate-y-1">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" />
-                <input
-                  type="password"
-                  placeholder="Contraseña"
-                  className="w-full p-4 pl-12 bg-black/30 backdrop-blur-xl border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-transparent transition-all duration-300 hover:border-yellow-400/30"
-                />
-              </div>
-              <button className="w-full p-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-purple-600 rounded-xl font-bold transform hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 flex items-center justify-center space-x-2 group">
-                <span>INGRESAR</span>
-                <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
-              </button>
+              <LoginForm />
             </div>
 
             <div className="text-center">
@@ -100,7 +74,7 @@ const LoginComponent: React.FC = () => {
           </div>
         </div>
       </div>
-      <ForgotPassword isModalOpen={isModalOpen} closeModal={closeModal} /> 
+      <ForgotPassword isModalOpen={isModalOpen} closeModal={closeModal} />
     </div>
   );
 };
