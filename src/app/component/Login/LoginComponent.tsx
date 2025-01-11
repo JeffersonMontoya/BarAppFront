@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Shield} from "lucide-react";
-import ForgotPassword from '@/app/component/ForgotPassword'
+import ForgotPassword from '@/app/component/Login/ForgotPassword'
 import LoginForm from './LoginForm';
 
 const LoginComponent: React.FC = () => {

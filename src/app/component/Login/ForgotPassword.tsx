@@ -2,7 +2,7 @@
 
 import React from "react";
 import {Mail} from "lucide-react";
-import ForgotPassword from '@/app/component/ForgotPassword';
+import ForgotPassword from '@/app/component/Login/ForgotPassword';
 
 
 interface ForgotPasswordProps {

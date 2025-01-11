@@ -1,6 +1,6 @@
 
 import React from 'react'
-import LoginComponent from '@/app/component/LoginComponent'
+import LoginComponent from '@/app/component/Login/LoginComponent'
 
 const Home = () => {
   return (
