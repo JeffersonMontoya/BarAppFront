@@ -12,7 +12,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-const Home = () => {
+const LoginComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -206,5 +206,4 @@ const Home = () => {
   );
 };
 
-export default Home;
-    
+export default LoginComponent;
