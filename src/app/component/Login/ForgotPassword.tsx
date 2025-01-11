@@ -1,16 +1,23 @@
-// components/RecuperarContraseña.tsx (Si estás usando TypeScript)
-
-import React from "react";
-import {Mail} from "lucide-react";
-import ForgotPassword from '@/app/component/Login/ForgotPassword';
-
+import React, { useEffect } from "react";
+import { Mail } from "lucide-react";
 
 interface ForgotPasswordProps {
   isModalOpen: boolean;
   closeModal: () => void;
 }
 
-const ForgotPasswordProps: React.FC<ForgotPasswordProps> = ({ isModalOpen, closeModal }) => {
+const ForgotPassword: React.FC<ForgotPasswordProps> = ({ isModalOpen, closeModal }) => {
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isModalOpen]);
+
   return (
     isModalOpen && (
       <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -63,4 +70,4 @@ const ForgotPasswordProps: React.FC<ForgotPasswordProps> = ({ isModalOpen, close
   );
 };
 
-export default ForgotPasswordProps;
+export default ForgotPassword;
