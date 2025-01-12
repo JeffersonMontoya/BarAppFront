@@ -40,7 +40,7 @@ const LoginComponent: React.FC = () => {
           </div>
           <div className="space-y-4 text-center max-w-md relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
-              NOMMBRE PLATAFORMA
+              NOMBRE PLATAFORMA
             </h1>
             <p className="text-gray-300 leading-relaxed text-sm md:text-base px-4 animate-fade-in-up">
               Bienvenido a tu plataforma de gestión empresarial integral. Accede
